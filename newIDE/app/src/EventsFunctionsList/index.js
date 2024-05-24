@@ -544,6 +544,7 @@ const EventsFunctionsList = React.forwardRef<
       onSelectExtensionProperties,
       onSelectExtensionGlobalVariables,
       onSelectExtensionSceneVariables,
+      onOpenCustomObjectEditor,
     }: Props,
     ref
   ) => {
@@ -984,6 +985,7 @@ const EventsFunctionsList = React.forwardRef<
         selectedEventsBasedBehavior,
         selectedEventsBasedObject,
         selectedEventsFunction,
+        onOpenCustomObjectEditor,
       }),
       [
         project,
@@ -1006,6 +1008,7 @@ const EventsFunctionsList = React.forwardRef<
         selectedEventsBasedBehavior,
         selectedEventsBasedObject,
         selectedEventsFunction,
+        onOpenCustomObjectEditor,
       ]
     );
 
