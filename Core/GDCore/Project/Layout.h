@@ -36,7 +36,7 @@ namespace gd {
  *
  * \ingroup PlatformDefinition
  */
-class GD_CORE_API Layout : public ObjectsContainer {
+class GD_CORE_API Layout {
  public:
   Layout();
   Layout(const Layout&);
@@ -102,6 +102,24 @@ class GD_CORE_API Layout : public ObjectsContainer {
    */
   void SetWindowDefaultTitle(const gd::String& title_) { title = title_; };
 
+  ///@}
+
+  /** \name Layout's objects
+   */
+  ///@{
+  /**
+   * \brief return the objects of the scene.
+   */
+  gd::ObjectsContainer& GetObjectsContainer() {
+    return objectsContainer;
+  }
+
+  /**
+   * \brief Return the objects of the scene.
+   */
+  const gd::ObjectsContainer& GetObjectsContainer() const {
+    return objectsContainer;
+  }
   ///@}
 
   /** \name Layout's initial instances
@@ -355,6 +373,7 @@ class GD_CORE_API Layout : public ObjectsContainer {
   unsigned int backgroundColorB;     ///< Background color Blue component
   gd::String title;                  ///< Title displayed in the window
   gd::VariablesContainer variables;  ///< Variables list
+  gd::ObjectsContainer objectsContainer;
   gd::InitialInstancesContainer initialInstances;  ///< Initial instances
   gd::LayersContainer layers;
   std::map<gd::String, std::unique_ptr<gd::BehaviorsSharedData>>
