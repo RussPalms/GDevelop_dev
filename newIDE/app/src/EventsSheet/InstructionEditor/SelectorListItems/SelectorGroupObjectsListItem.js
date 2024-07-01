@@ -16,6 +16,7 @@ type Props = {|
   selectedValue: ?string,
   matchesCoordinates: number[][],
   id: ?string,
+  data?: HTMLDataset,
 |};
 
 export const renderGroupObjectsListItem = ({
@@ -25,11 +26,13 @@ export const renderGroupObjectsListItem = ({
   selectedValue,
   matchesCoordinates,
   id,
+  data,
 }: Props) => {
   const groupName: string = groupWithContext.group.getName();
   return (
     <ListItem
       id={id}
+      data={data}
       key={getObjectGroupListItemKey(groupWithContext)}
       selected={
         selectedValue === getObjectOrObjectGroupListItemValue(groupName)

@@ -443,6 +443,9 @@ export default class InstructionOrObjectSelector extends React.PureComponent<
                           results.push(
                             renderGroupObjectsListItem({
                               id: 'objectGroup-item-' + index,
+                              data: {
+                                objectName: groupWithContext.group.getName(),
+                              },
                               groupWithContext,
                               iconSize,
                               onClick: () =>
